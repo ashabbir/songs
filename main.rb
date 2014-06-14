@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'dm-core'
-require 'dm-migrations'
+require './song'
 
 
 
@@ -22,5 +21,11 @@ end
 
 get '/contact' do 
   erb :contact
+end
+
+
+get '/songs' do
+  @songs = Song.all
+  erb :songs
 end
 
