@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'dm-core'
+require 'dm-migrations'
+
 
 
 set :public_folder, 'public'
