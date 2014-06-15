@@ -1,5 +1,5 @@
 body {
-	padding-top: 50px;
+	padding-top: 60px;
 	position: relative;
 	height: 100%;
 }
@@ -44,7 +44,16 @@ pre {
 
 
 
-
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
 
 /*  bhoechie tab */
 div.bhoechie-tab-container{
@@ -115,3 +124,17 @@ div.bhoechie-tab-content{
 div.bhoechie-tab div.bhoechie-tab-content:not(.active){
   display: none;
 }
+
+.thumbnail.right-caption > img {
+    float: left;
+    margin-right: 9px;
+}
+
+.thumbnail.right-caption {
+    float: left;
+}
+
+.thumbnail.right-caption > .caption {
+    padding: 4px;
+}
+
