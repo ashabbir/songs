@@ -15,7 +15,10 @@
 				</a>
 				<a href="#" class="list-group-item text-center">
 					<h4 class="glyphicon glyphicon-plus-sign"></h4><br/>Release Date
-				</a>               
+				</a> 
+				<a href="#" class="list-group-item text-center">
+					<h4 class="glyphicon glyphicon-cog"></h4><br/>Modify
+				</a>              
 			</div>
 		</div>
 		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
@@ -45,6 +48,21 @@
 				<center>
 					<h1 class="glyphicon glyphicon-plus-sign" style="font-size:12em;color:#55518a"></h1>
 					<h2 style="margin-top: 0;color:#55518a"><%= @song.released_on.strftime("%e %B %Y") if @song.released_on %></h2>
+				</center>
+			</div>
+			<div class="bhoechie-tab-content">
+				<center>
+					<h1 class="glyphicon glyphicon-cog" style="font-size:12em;color:#55518a"></h1>
+
+					<h2>	 
+						<form action='/songs/<%= @song.id %> ' method="post" accept-charset="utf-8">
+							<input type="submit" name="delete" value="delete" id="delete" class="btn btn-link">
+							<input type="hidden" name="_method" value="DELETE">
+						</form>
+					</h2>
+					<h2 style="margin-top: 0;color:#55518a">
+						<a class="btn btn-link" href="/songs/<%= @song.id %>/edit">edit</a>
+					</h2>
 				</center>
 			</div>
 		</div>
