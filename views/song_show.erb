@@ -1,6 +1,5 @@
-<a href='/songs' class='pull-right'>back</a>
 
-
+<a href='/songs' class='pull-left'>back</a>
 <div class="row">
 	<div class="col-lg-5 col-md-5 col-sm-8 col-xs-9 bhoechie-tab-container">
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
@@ -39,15 +38,18 @@
 			<div class="bhoechie-tab-content">
 				<center>
 					<h1 class="glyphicon glyphicon-time" style="font-size:12em;color:#55518a"></h1>
-					<h2 style="margin-top: 0;color:#55518a"><%= @song.length %></h2>
+					<h2 style="margin-top: 0;color:#55518a"><%= @song.length%60 %> minutes</h2>
 				</center>
 			</div>
 			<div class="bhoechie-tab-content">
 				<center>
 					<h1 class="glyphicon glyphicon-plus-sign" style="font-size:12em;color:#55518a"></h1>
-					<h2 style="margin-top: 0;color:#55518a"><%= @song.released_on %></h2>
+					<h2 style="margin-top: 0;color:#55518a"><%= @song.released_on.strftime("%e %B %Y") if @song.released_on %></h2>
 				</center>
 			</div>
 		</div>
+		
 	</div>
 </div>
+
+
