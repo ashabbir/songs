@@ -25,14 +25,12 @@
 
 			<div class="bhoechie-tab-content active">
 				<center>
-					<h1 class="glyphicon glyphicon-info-sign" style="font-size:14em;color:#55518a"></h1>
 					<h2 style="margin-top: 0;color:#55518a"><%= @song.title %></h2>
 				</center>
 			</div>
 
 			<div class="bhoechie-tab-content">
 				<center>
-					<h1 class="glyphicon glyphicon-music" style="font-size:12em;color:#55518a"></h1>
 					<h2 style="margin-top: 0;color:#55518a"><%= @song.lyrics %></h2>
 				</center>
 			</div>
@@ -40,13 +38,11 @@
 
 			<div class="bhoechie-tab-content">
 				<center>
-					<h1 class="glyphicon glyphicon-time" style="font-size:12em;color:#55518a"></h1>
 					<h2 style="margin-top: 0;color:#55518a"><%= @song.length%60 %> minutes</h2>
 				</center>
 			</div>
 			<div class="bhoechie-tab-content">
 				<center>
-					<h1 class="glyphicon glyphicon-plus-sign" style="font-size:12em;color:#55518a"></h1>
 					<h2 style="margin-top: 0;color:#55518a"><%= @song.released_on.strftime("%e %B %Y") if @song.released_on %></h2>
 				</center>
 			</div>
@@ -56,7 +52,7 @@
 
 					<h2>	 
 						<form action='/songs/<%= @song.id %> ' method="post" accept-charset="utf-8">
-							<input type="submit" name="delete" value="delete" id="delete" class="btn btn-link">
+						<input type="submit" name="delete" value="delete" id="delete" class="btn btn-link">
 							<input type="hidden" name="_method" value="DELETE">
 						</form>
 					</h2>

@@ -18,8 +18,8 @@
 			<td> <%= s.id %> </td>
 			<td> <a href='/songs/<%= s.id %>'><%= s.title %></a>  </td>
 			<td> <%= s.lyrics %> </td>
-			<td> <%= s.length %> </td>
-			<td> <%= s.released_on %> </td>
+			<td> <%= s.length%60 %> min </td>
+			<td> <%= s.released_on.strftime("%e %B %Y") if s.released_on %> </td>
 		</tr>
 		<% end %>
 	</tbody>
