@@ -134,7 +134,7 @@ def send_message
     :user_name            => ENV['USR_NAME'],
     :password             => ENV['PWD'],
     :authentication       => :plain, 
-    :domain               => "localhost.localdomain" 
+    :domain               => "heroku.com" 
     })
 end
 
