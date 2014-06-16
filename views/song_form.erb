@@ -1,0 +1,31 @@
+						<div class="input-group">
+							<span class="input-group-addon">T</span>
+							<input type="text" name="song[title]" required="required" 
+							value="<%= @song.title %>" id="title" class="form-control" placeholder="Title">
+						</div>
+						
+						<div class="input-group">
+							<input type="text" name="song[length]" required="required" 
+							value="<%= @song.length %>" id="length"  type="number" min="1" step="1" 
+							class="form-control" placeholder="Length in mins">
+							<span class="input-group-addon">.00</span>
+							
+						</div>
+						
+						<div class="input-group">
+							<input type="text" name="song[released_on]" required="required"  
+							value="<%= @song.released_on.strftime("%m/%d/%Y") if @song.released_on %>"
+							id="release_date" class="form-control" placeholder="Release date">
+							<span class="input-group-addon">mm/dd/yyyy</span>
+							
+						</div>
+						
+						<div>
+							<textarea name="song[lyrics]" id="lyrics" class="form-control" rows="9" 
+							required="required" placeholder="Lyrics"><%= @song.lyrics %></textarea>
+
+						</div>
+						
+						<div class="input-group">
+							<input type="submit" value="Submit" class ='btn btn-primary'>
+						</div>

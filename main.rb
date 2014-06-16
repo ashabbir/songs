@@ -26,7 +26,7 @@ get '/contact' do
 end
 
 
-#add new  C
+#add new  C of crud
 get '/songs/new' do
   @song = Song.new
   erb :song_new
@@ -39,21 +39,32 @@ post '/songs' do
 end
 
 
-#show list R
+#show list R of crud
 get '/songs' do
   @songs = Song.all
   erb :songs
 end
 
-#show single R
+#show single R of crud
 get '/songs/:id' do
   @song = Song.get(params[:id])
   erb :song_show
 end
 
 
+#Update single U of crud
+get '/songs/:id/edit' do
+  @song = Song.get(params[:id])
+  erb :song_edit
+end
 
-#delete single D
+put '/songs/:id' do
+  song = Song.get(params[:id])
+  song.update(params[:song])
+  redirect to("/songs/#{song.id}")
+end
+
+#delete single D of crud
 delete '/songs/:id' do
   @song = Song.get(params[:id]).destroy
   redirect to('/songs')
