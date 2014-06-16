@@ -131,7 +131,7 @@ def send_message
     :address              => 'smtp.gmail.com',
     :port                 => '587',
     :enable_starttls_auto => true,
-    :user_name            => ENV['USR_NAME'],,
+    :user_name            => ENV['USR_NAME'],
     :password             => ENV['PWD'],
     :authentication       => :plain, 
     :domain               => "localhost.localdomain" 
