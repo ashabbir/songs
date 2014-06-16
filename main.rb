@@ -30,6 +30,11 @@ not_found do
   erb :not_found
 end
 
+error do
+  @error = request.env['sinatra_error'].name
+  haml :'500'
+end
+
 
 # login 
 get '/' do
