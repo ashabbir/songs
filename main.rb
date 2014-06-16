@@ -137,8 +137,7 @@ def send_message
     :enable_starttls_auto => true,
     :user_name            => ENV['USR_NAME'],
     :password             => ENV['PWD'],
-    :authentication       => :plain, 
-    :domain               => "heroku.com" 
+    :authentication       => :plain
     })
 end
 
