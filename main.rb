@@ -32,7 +32,8 @@ end
 
 error do
   @error = request.env['sinatra_error'].name
-  haml :'500'
+  @mes request.env['sinatra.error'].message
+  erb :error
 end
 
 
