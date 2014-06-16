@@ -32,7 +32,8 @@ end
 
 error do
   @error = request.env['sinatra_error'].name
-  @mes request.env['sinatra.error'].message
+  @msg = request.env['sinatra.error'].message
+  @jsn = request.env['sinatra.error'].to_json
   erb :error
 end
 
