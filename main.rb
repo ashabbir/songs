@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require './song'
+require 'json'
+require 'pry' if development?
+
 
 
 
@@ -16,6 +19,11 @@ configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 
+configure do
+  enable :sessions
+  set :username, 'frank'
+  set :password, 'sinatra'
+end
 
 
 not_found do
@@ -23,8 +31,31 @@ not_found do
 end
 
 
-
+# login 
 get '/' do
+  erb :login, :layout => false
+end
+
+post '/login' do
+  content_type :json
+  if params[:username] == settings.username && params[:password] == settings.password
+    session[:admin] = true
+    { :login => 'success'}.to_json
+  else
+    { :login => 'fail'}.to_json
+  end
+end
+
+get '/logout' do
+  session.clear
+  redirect to('/')
+end
+
+
+
+
+# basic gets for home contact and about
+get '/home' do
   erb :home
 end
 
