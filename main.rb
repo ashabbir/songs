@@ -3,7 +3,7 @@ require 'sinatra/reloader' if development?
 require './song'
 require 'json'
 require 'pry' if development?
-
+require 'pony'
 
 
 
@@ -68,6 +68,12 @@ get '/contact' do
 end
 
 
+post '/contact' do
+  send_message
+  redirect to('/home')
+end
+
+
 #add new  C of crud
 get '/songs/new' do
   @song = Song.new
@@ -112,5 +118,24 @@ delete '/songs/:id' do
   redirect to('/songs')
 end
 
+
+
+def send_message
+  Pony.mail(
+  :from => params[:name] + '<' + params[:email] + '>',
+  :to => 'shabbir10314@gmail.com',
+  :subject => params[:name] + " has contacted you",
+  :body =>params[:message],
+  :via => :smtp,
+  :via_options => {
+    :address              => 'smtp.gmail.com',
+    :port                 => '587',
+    :enable_starttls_auto => true,
+    :user_name            => ENV['USR_NAME'],,
+    :password             => ENV['PWD'],
+    :authentication       => :plain, 
+    :domain               => "localhost.localdomain" 
+    })
+end
 
 
