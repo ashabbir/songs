@@ -12,9 +12,6 @@ $(document).ready(function() {
 			
 	//to set the nav bar active depending on path
 	$('ul.nav > li > a[href="' + document.location.pathname + '"]').parent().addClass('active');
-			
-			
-	
 });
 		
 		

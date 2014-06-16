@@ -7,4 +7,4 @@ $(function(){
 		$("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
 		$("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
 	});
-)};
+});
