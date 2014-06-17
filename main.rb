@@ -14,10 +14,19 @@ set :public, 'public'
 
 configure :development do
   DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+  set :email_address => 'smtp.gmail.com',
+  :email_user_name =>  ENV['USR_NAME'],
+  :email_password => ENV['PWD'],
+  :email_domain => 'localhost.localdomain'
 end
 configure :production do
   DataMapper.setup(:default, ENV['DATABASE_URL'])
+  set :email_address => 'smtp.sendgrid.net',
+  :email_user_name => ENV['USR_NAME'],
+  :email_password => ENV['PWD'],
+  :email_domain => 'heroku.com'
 end
+
 
 configure do
   enable :sessions
@@ -139,6 +148,6 @@ def send_message
     :password             => ENV['PWD'],
     :authentication       => :plain
     })
-end
+  end
 
 
