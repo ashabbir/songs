@@ -13,6 +13,8 @@ $ruby main.rb
 
 ### Live URL
 <a href="http://sinatra-song.herokuapp.com/" target="_blank">heroku site</a>
+username is frank 
+password is sinatra 
 
 ### comments
 the book sample is using sinatra, less slim and thin. 
