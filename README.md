@@ -4,11 +4,11 @@ just replaces slim template with reqular erb and introduced boot strap
 
 ### To Run Me
 you need bundler (it has a gem file )
-```shell
 $gem install bundler
 once installed 
-ruby main.rb
-```
+$bundle install
+$ruby main.rb
+
 
 ### Live URL
 http://sinatra-song.herokuapp.com/
